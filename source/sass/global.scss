@@ -1,0 +1,48 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Roboto Condensed', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  font-style: normal;
+  line-height: normal;
+  text-align: left;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+
+
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+
+  overflow: hidden;
+  white-space: nowrap;
+
+  border: 0;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+}
