@@ -1,0 +1,143 @@
+.header {
+  margin: 0;
+  padding: 0;
+  padding-top: 30px;
+  color: $white;
+
+  background-color: #1b2a31;
+  background-image: url("../img/header_bg@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 1920px auto;
+
+  @media (min-resolution: $retina-dpi),
+    (min-resolution: $retina-dppx) {
+    background-image: url("../img/header_bg@2x.jpg");
+  }
+}
+
+.header__wrapper {
+  @include desktop-wrapper;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  & a[href] {
+    @include link;
+    color: $white;
+    transition: color 200ms ease-in;
+  }
+
+  & a[href]:hover {
+    color: $colored-button;
+  }
+
+  & a[href]:active {
+    opacity: 0.7;
+  }
+
+  & ul {
+    @include list-reducer;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-right: 50px;
+  }
+
+  & li {
+    display: flex;
+    align-items: center;
+    margin-left: 88px;
+  }
+
+  & svg {
+    margin-right: 15px;
+  }
+
+  & .button {
+    width: 180px;
+    height: 45px;
+    margin-right: -13px;
+  }
+}
+
+.header__logo {
+  margin-right: auto;
+
+  & img:last-of-type {
+    margin-left: 18px;
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .header {
+    padding-top: 20px;
+  }
+
+  .header__wrapper {
+    padding: 0 23px;
+
+    & a[href] {
+      font-size: 0;
+    }
+
+    & ul {
+      margin: 0;
+    }
+
+    & li {
+      margin-left: 33px;
+    }
+
+    & .button {
+      display: none;
+    }
+
+    & svg {
+      margin-right: 1px;
+      margin-bottom: 4px;
+    }
+  }
+
+  .header__icon {
+    &--phone {
+      width: 25px;
+      height: 25px;
+    }
+
+    &--envelope {
+      width: 25px;
+      height: 18px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding-top: 16px;
+    width: 100%;
+  }
+
+  .header__wrapper {
+    min-width: $min-mobile-width;
+    padding: 0 17px;
+
+    & li {
+      margin-left: 20px;
+    }
+  }
+
+  .header__logo {
+    & img:first-of-type {
+      width: 38px;
+      height: 38px;
+    }
+
+    & img:last-of-type {
+      display: none;
+    }
+  }
+}

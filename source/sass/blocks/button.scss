@@ -1,0 +1,61 @@
+.button {
+  @include link;
+  padding: 14px;
+
+  background: none;
+  border: none;
+  border-radius: 5px;
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: bold;
+  font-size: 0.9rem;
+
+  text-transform: uppercase;
+  text-align: center;
+
+  transition: background-color 200ms ease-in, color 200ms ease-in;
+  cursor: pointer;
+
+  &--transparent {
+    border: 1px solid $white;
+  }
+
+  &--transparent:hover {
+    background-color: $white;
+    color: $colored-button;
+  }
+
+  &--colored {
+    font-size: 1rem;
+    border: 1px solid $colored-button;
+    background-color: $colored-button;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+  }
+
+  &--colored:hover {
+    border-color: $white;
+    background-color: $white;
+    color: $colored-button;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+
+  &--mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .button {
+    &--desktop {
+      display: none;
+    }
+
+    &--mobile {
+      display: inline-block;
+    }
+  }
+}
