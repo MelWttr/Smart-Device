@@ -100,7 +100,7 @@ gulp.task("sprite-icons", function () {
       inlineSvg: true
     }))
     .pipe(rename("sprite-icons.svg"))
-    .pipe(gulp.dest("source/img"));
+    .pipe(gulp.dest("build/img"));
 });
 
 gulp.task("html", function () {

@@ -72,7 +72,7 @@
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: $tablet-width) {
   .header {
     padding-top: 20px;
   }
@@ -115,7 +115,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: $mobile-width) {
   .header {
     padding-top: 16px;
     width: 100%;
