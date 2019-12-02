@@ -61,6 +61,15 @@
     display: none;
   }
 
+  & svg {
+    fill: $social-link-color;
+    transition: all 200ms ease-in;
+  }
+
+  & a:hover svg {
+    fill: $colored-button;
+  }
+
   & li:not(:last-of-type) {
     margin-right: 15px;
   }

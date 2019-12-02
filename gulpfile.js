@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var gulp = require("gulp");
 var plumber = require("gulp-plumber");
@@ -12,7 +12,7 @@ var server = require("browser-sync").create();
 
 var imagemin = require("gulp-imagemin");
 var svgstore = require("gulp-svgstore");
-// var cheerio = require("gulp-cheerio");
+var cheerio = require("gulp-cheerio");
 var webp = require("gulp-webp");
 
 var posthtml = require("gulp-posthtml");
@@ -88,14 +88,14 @@ gulp.task("webp", function () {
 
 gulp.task("sprite-icons", function () {
   return gulp.src("source/img/icon*.svg")
-    // .pipe(cheerio({
-    //   run: function ($) {
-    //     $("[fill]").removeAttr("fill");
-    //   },
-    //   parserOptions: {
-    //     xmlMode: true
-    //   }
-    // }))
+    .pipe(cheerio({
+      run: function ($) {
+        $("[fill]").removeAttr("fill");
+      },
+      parserOptions: {
+        xmlMode: true
+      }
+    }))
     .pipe(svgstore({
       inlineSvg: true
     }))
