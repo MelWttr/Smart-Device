@@ -1,0 +1,7 @@
+.about {
+  z-index: -1;
+}
+
+.about__wrapper {
+  @include desktop-wrapper;
+}

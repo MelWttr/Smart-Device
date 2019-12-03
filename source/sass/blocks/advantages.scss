@@ -2,38 +2,12 @@
   width: 100%;
   padding-bottom: 95px;
   padding-top: 95px;
-  overflow: hidden;
 }
 
 .advantages__wrapper {
-  position: relative;
-
   @include desktop-wrapper;
   padding: 0 113px 0 126px;
 
-  &::before {
-    @include pseudo(872px, 873px);
-
-    top: 329px;
-    left: 0;
-    margin-top: 16px;
-    margin-left: -528px;
-    z-index: -1;
-    background-image: url("../img/triangle_big.svg");
-
-    transform: rotate(180deg);
-  }
-
-  &::after {
-    @include pseudo(872px, 873px);
-
-    top: 53px;
-    left: 864px;
-    margin-left: -538px;
-    z-index: -1;
-
-    background-image: url("../img/triangle_big.svg");
-  }
 
   & ul {
     @include list-reducer;
@@ -149,14 +123,6 @@
   .advantages__wrapper {
     padding: 0 10px 0 10px;
 
-    &::before {
-      display: none;
-    }
-
-    &::after {
-      margin-left: -653px;
-    }
-
     & ul::before,
     & ul::after {
       display: none;
@@ -228,17 +194,6 @@
     min-width: $min-mobile-width;
     padding-left: 12px;
     padding-right: 16px;
-
-    &::after {
-      top: 631px;
-      margin-left: -986px;
-      width: 875px;
-      height: 875px;
-
-      background-size: 873px 873px;
-      background-position: top left;
-      background-repeat: no-repeat;
-    }
 
     & ul {
       flex-direction: column;

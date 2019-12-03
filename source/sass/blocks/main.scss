@@ -1,3 +1,64 @@
 .main {
   flex: 1 0 auto;
+  overflow: hidden;
 }
+
+.main__container {
+  position: relative;
+
+  @include desktop-wrapper;
+  padding: 0;
+
+  &::before {
+    @include pseudo(872px, 873px);
+
+    top: 425px;
+    left: 0;
+    margin-top: 16px;
+    margin-left: -528px;
+    z-index: -1;
+    background-image: url("../img/triangle_big.svg");
+
+    transform: rotate(180deg);
+  }
+
+  &::after {
+    @include pseudo(872px, 873px);
+
+    top: 145px;
+    right: 241px;
+    z-index: -1;
+
+    background-image: url("../img/triangle_big.svg");
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .main__container {
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      top: 90px;
+      margin-right: -314px;
+      right: 0;
+    }
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .main__container {
+    &::after {
+      top: 652px;
+      margin-right: -434px;
+      width: 875px;
+      height: 875px;
+
+      background-size: 873px 873px;
+      background-position: top left;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
