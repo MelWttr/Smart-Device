@@ -17,19 +17,6 @@
   color: $color;
 }
 
-@mixin title-small($size, $height, $color: $dark) {
-  margin: 0;
-  padding: 0;
-
-  font-size: $size;
-  font-weight: normal;
-  font-style: normal;
-  line-height: $height;
-  letter-spacing: normal;
-  text-transform: uppercase;
-  color: $color;
-}
-
 @mixin flex-mobile {
   display: flex;
   flex-direction: column;
