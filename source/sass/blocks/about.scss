@@ -1,5 +1,5 @@
 .about {
-  padding-bottom: 110px;
+  padding-bottom: 106px;
 }
 
 .about__wrapper {
@@ -52,6 +52,11 @@
 
     color: $colored-button;
     border-color: $colored-button;
+  }
+
+  & .button:hover {
+    background-color: $colored-button;
+    color: $white;
   }
 }
 
