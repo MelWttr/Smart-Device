@@ -42,3 +42,12 @@
   width: $width;
   height: $height;
 }
+
+@mixin h2-fontstyle {
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-size: 2.25rem;
+  font-weight: normal;
+  line-height: 1.41;
+  color: $white;
+}

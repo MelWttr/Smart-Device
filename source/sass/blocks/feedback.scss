@@ -1,0 +1,96 @@
+.feedback {
+  padding: 85px 0 111px;
+  overflow: hidden;
+  background-color: $form-color;
+}
+
+.feedback__wrapper {
+  @include desktop-wrapper;
+  position: relative;
+  padding-left: 742px;
+
+  &::before {
+    @include pseudo(686px, 641px);
+    top: 0;
+    left: 0;
+    margin-top: -147px;
+    margin-left: -57px;
+
+    background-image: url("../img/airplane@1x.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+
+    @media (min-resolution: $retina-dpi),
+      (min-resolution: $retina-dppx) {
+      background-image: url("../img/airplane@2x.png");
+    }
+  }
+}
+
+.feedback__form {
+  position: relative;
+  max-width: 570px;
+
+  &::before {
+    @include pseudo(405px, 405px);
+    top: 120px;
+    right: 0;
+    margin-right: -448px;
+    opacity: 0.2;
+
+    background-image: url("../img/triangle_small.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 405px, 405px;
+  }
+
+  &::after {
+    @include pseudo(336px, 324px);
+    top: 0;
+    right: 0;
+    margin-top: -63px;
+    margin-right: -370px;
+    opacity: 0.2;
+
+    background-image: url("../img/triangle_small.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 274px, auto;
+
+    transform: rotate(-180deg);
+  }
+}
+
+@media (max-width: $form-nobg-width) {
+  .feedback__wrapper {
+    max-width: 100%;
+    width: 100%;
+    padding: 0 90px;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .feedback {
+    padding: 75px 0 104px;
+  }
+
+  .feedback__form {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .feedback {
+    padding: 24px 0 45px;
+  }
+
+  .feedback__wrapper {
+    padding: 0 15px;
+  }
+}

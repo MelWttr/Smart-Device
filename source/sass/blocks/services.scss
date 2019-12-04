@@ -1,5 +1,5 @@
 .services {
-  padding: 88px 0 127px;
+  padding: 88px 0 125px;
   background-color: $bg-dark;
 }
 
@@ -8,14 +8,9 @@
   padding: 0 128px;
 
   & h2 {
+    @include h2-fontstyle;
     margin: 0;
     padding: 0 15px;
-
-    font-family: "Roboto Condensed", "Arial", sans-serif;
-    font-size: 2.25rem;
-    font-weight: normal;
-    line-height: 1.41;
-    color: $white;
   }
 
   & ul {
@@ -182,6 +177,17 @@
 
     & li {
       margin-top: 30px;
+    }
+
+    @for $i from 1 through 3 {
+      li:nth-of-type(#{$i}) {
+        background-image: url("../img/service_#{$i}_mobile@1x.png");
+
+        @media (min-resolution: $retina-dpi),
+          (min-resolution: $retina-dppx) {
+          background-image: url("../img/service_#{$i}_mobile@2x.png");
+        }
+      }
     }
 
     & h3 {

@@ -75,7 +75,7 @@ gulp.task("svg", function () {
     .pipe(imagemin([
       imagemin.svgo()
     ]))
-    .pipe(gulp.dest("source/img"));
+    .pipe(gulp.dest("build/img"));
 });
 
 gulp.task("webp", function () {

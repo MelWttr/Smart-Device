@@ -1,5 +1,10 @@
 'use strict'
+
+// реализация открытия/закрытия меню разделов 'contacts' в футере
+
 const mobileScreen = '(max-width: 767px)';
+const escCode = 27;
+
 let footerNav = document.querySelector('.footer__menu--navigation');
 let footerContacts = document.querySelector('.footer__menu--contacts');
 
@@ -30,4 +35,80 @@ if (window.matchMedia(mobileScreen).matches) {
   }
 }
 
+// реализация открытия/закрытия попапа
 
+let openButton = document.querySelector('.button--open-popup');
+let modal = document.querySelector('.modal');
+let overlay = modal.querySelector('.modal__overlay');
+let closeBtn = modal.querySelector('.popup__button');
+
+let popup = modal.querySelector('.popup');
+let userName = popup.querySelector('[name=username]');
+let form = popup.querySelector('form');
+let userPhone = popup.querySelector('[name=userphone]');
+let userText = popup.querySelector('[name=usertext]');
+let isStorageSupport = true;
+let storageName = '';
+let storagePhone = '';
+let storageText = '';
+
+let openPopup = () => {
+  modal.classList.remove('hidden');
+  document.addEventListener('keydown', onPopupEscPress);
+
+  if (storageName && storagePhone && storageText) {
+    userName.value = storageName;
+    userPhone.value = storagePhone;
+    userText.value = storageText;
+    userName.focus();
+  } else if (storageName && storagePhone && !storageText) {
+    userName.value = storageName;
+    userPhone.value = storagePhone;
+    userText.focus();
+  } else if (!storageName && storagePhone && storageText) {
+    userPhone.value = storagePhone;
+    userText.value = storageText;
+    userName.focus();
+  } else if (storageName && !storagePhone && storageText) {
+    userName.value = storagePhone;
+    userText.value = storageText;
+    userPhone.focus();
+  } else {
+    userName.focus();
+  }
+};
+
+let closePopup = function () {
+  modal.classList.add('hidden');
+  document.removeEventListener('keydown', onPopupEscPress);
+};
+
+let onPopupEscPress = function (evt) {
+  if (evt.keyCode === escCode) {
+    closePopup();
+  }
+};
+
+openButton.addEventListener('click', openPopup);
+closeBtn.addEventListener('click', closePopup);
+overlay.addEventListener('click', closePopup)
+
+// реализация автозаполнения формы
+
+
+try {
+  storageName = localStorage.getItem('username');
+  storagePhone = localStorage.getItem('userphone');
+  storageText = localStorage.getItem('usertext')
+} catch (error) {
+  isStorageSupport = false;
+}
+
+form.addEventListener('submit', (evt) => {
+  if (isStorageSupport) {
+    localStorage.setItem('username', userName.value);
+    localStorage.setItem('userphone', userPhone.value);
+    localStorage.setItem('usertext', userText.value);
+  }
+  form.submit();
+});
