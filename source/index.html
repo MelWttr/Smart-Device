@@ -145,13 +145,13 @@
           <form action="#">
 
             <div class="form__user-info">
-              <label><input id="input" type="text" placeholder="Имя" minlength="2" maxlength="20"
-                  pattern="[A-Za-zА-Яа-яЁё ]*" required></label>
+              <label><input type="text" placeholder="Имя" minlength="2" maxlength="20" pattern="[A-Za-zА-Яа-яЁё ]*"
+                  required></label>
               <label><input type="tel" placeholder="Телефон" minlength="5" maxlength="40" pattern="[0-9]*"
                   required></label>
             </div>
             <div class="form__textarea">
-              <label><textarea placeholder="Ваш вопрос"></label>
+              <label><textarea placeholder="Ваш вопрос" required></label>
             </div>
             <div class="form__submition">
                 <button class="button button--transparent" type="submit">Задать вопрос</button>
@@ -243,7 +243,7 @@
   </footer>
   <section class="modal hidden">
       <div class="popup">
-        <button type="button" class="popup__button">Закрыть окно</button>
+        <button type="button" class="popup__button" aria-label="Закрыть окно">Закрыть окно</button>
         <div class="popup__form form">
             <h2>Закажите звонок</h2>
             <p>Оставьте контакты, мы проконсультируем вас&nbsp;бесплатно в удобное время</p>
