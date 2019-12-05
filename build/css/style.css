@@ -1148,7 +1148,7 @@ input[type="radio"].visually-hidden {
       padding: 23px 19px 28px 26px;
       min-height: auto; }
     .advantages__wrapper li::before {
-      left: calc(-100% + 2px); }
+      leftt: calc(-100% + 2px); }
     .advantages__wrapper li:nth-of-type(4) {
       padding-bottom: 37px; }
       .advantages__wrapper li:nth-of-type(4) svg {

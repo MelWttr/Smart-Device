@@ -1,3 +1,4 @@
+
 'use strict'
 
 // реализация открытия/закрытия меню разделов 'contacts' в футере
@@ -55,26 +56,27 @@ let storageText = '';
 let openPopup = () => {
   modal.classList.remove('hidden');
   document.addEventListener('keydown', onPopupEscPress);
-
-  if (storageName && storagePhone && storageText) {
-    userName.value = storageName;
-    userPhone.value = storagePhone;
-    userText.value = storageText;
-    userName.focus();
-  } else if (storageName && storagePhone && !storageText) {
-    userName.value = storageName;
-    userPhone.value = storagePhone;
-    userText.focus();
-  } else if (!storageName && storagePhone && storageText) {
-    userPhone.value = storagePhone;
-    userText.value = storageText;
-    userName.focus();
-  } else if (storageName && !storagePhone && storageText) {
-    userName.value = storagePhone;
-    userText.value = storageText;
-    userPhone.focus();
-  } else {
-    userName.focus();
+  if (userName, userPhone, userText) {
+    if (storageName && storagePhone && storageText) {
+      userName.value = storageName;
+      userPhone.value = storagePhone;
+      userText.value = storageText;
+      userName.focus();
+    } else if (storageName && storagePhone && !storageText) {
+      userName.value = storageName;
+      userPhone.value = storagePhone;
+      userText.focus();
+    } else if (!storageName && storagePhone && storageText) {
+      userPhone.value = storagePhone;
+      userText.value = storageText;
+      userName.focus();
+    } else if (storageName && !storagePhone && storageText) {
+      userName.value = storagePhone;
+      userText.value = storageText;
+      userPhone.focus();
+    } else {
+      userName.focus();
+    }
   }
 };
 
@@ -89,12 +91,12 @@ let onPopupEscPress = function (evt) {
   }
 };
 
-openButton.addEventListener('click', openPopup);
-closeBtn.addEventListener('click', closePopup);
-overlay.addEventListener('click', closePopup)
-
+if (modal) {
+  openButton.addEventListener('click', openPopup);
+  closeBtn.addEventListener('click', closePopup);
+  overlay.addEventListener('click', closePopup);
+}
 // реализация автозаполнения формы
-
 
 try {
   storageName = localStorage.getItem('username');
@@ -104,11 +106,13 @@ try {
   isStorageSupport = false;
 }
 
-form.addEventListener('submit', (evt) => {
-  if (isStorageSupport) {
-    localStorage.setItem('username', userName.value);
-    localStorage.setItem('userphone', userPhone.value);
-    localStorage.setItem('usertext', userText.value);
-  }
-  form.submit();
-});
+if (form) {
+  form.addEventListener('submit', (evt) => {
+    if (isStorageSupport) {
+      localStorage.setItem('username', userName.value);
+      localStorage.setItem('userphone', userPhone.value);
+      localStorage.setItem('usertext', userText.value);
+    }
+    form.submit();
+  });
+}

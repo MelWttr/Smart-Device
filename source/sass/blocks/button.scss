@@ -21,7 +21,8 @@
     border: 1px solid $white;
   }
 
-  &--transparent:hover {
+  &--transparent:hover,
+  &--transparent:focus {
     background-color: $white;
     color: $colored-button;
   }
@@ -34,7 +35,8 @@
     line-height: 1.2;
   }
 
-  &--colored:hover {
+  &--colored:hover,
+  &--colored:focus {
     border-color: $white;
     background-color: $white;
     color: $colored-button;
