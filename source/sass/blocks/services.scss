@@ -1,5 +1,5 @@
 .services {
-  padding: 88px 0 125px;
+  padding: 89px 0 125px;
   background-color: $bg-dark;
 }
 
@@ -30,7 +30,6 @@
 
     background-repeat: no-repeat;
     background-size: cover;
-    border: 2px solid $service-border-color;
 
     transition: 200ms ease-in;
   }
@@ -93,7 +92,7 @@
   }
 
   & a:hover::after {
-    border-color: $service-border-color;
+    border-color: $colored-button;
     transform: scale(1.5) rotate(-45deg);
   }
 
@@ -111,7 +110,7 @@
 
 @media (max-width: $tablet-width) {
   .services {
-    padding: 38px 0 78px;
+    padding: 45px 0 78px;
   }
 
   .services__wrapper {

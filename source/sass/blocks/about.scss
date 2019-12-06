@@ -1,11 +1,11 @@
 .about {
-  padding-bottom: 106px;
+  padding-bottom: 107px;
 }
 
 .about__wrapper {
   @include desktop-wrapper;
   position: relative;
-  padding: 0 133px 0 322px;
+  padding: 0px 134px 0 318px;
   color: $main-text-color;
 
   &::before {
@@ -45,7 +45,6 @@
 
   & .button {
     width: 180px;
-    height: 45px;
     margin: 0;
     margin-top: 43px;
     padding: 0;
