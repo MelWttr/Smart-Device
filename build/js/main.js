@@ -18,7 +18,8 @@ let toggleMenu = (menu) => {
   menu.classList.toggle('footer__menu--opened');
 }
 
-if (window.matchMedia(mobileScreen).matches) {
+
+let toggleButtonHandler = () => {
 
   let footerNavBtn = document.querySelector('.footer__button--nav');
   let footerContactsBtn = document.querySelector('.footer__button--contacts');
@@ -36,12 +37,19 @@ if (window.matchMedia(mobileScreen).matches) {
   }
 }
 
+if (matchMedia) {
+  const mediaQuery = window.matchMedia(mobileScreen);
+  mediaQuery.addListener(toggleButtonHandler);
+}
+
+
 // реализация открытия/закрытия попапа
 
 let openButton = document.querySelector('.button--open-popup');
 let modal = document.querySelector('.modal');
 let overlay = modal.querySelector('.modal__overlay');
 let closeBtn = modal.querySelector('.popup__button');
+let body = document.querySelector('body');
 
 let popup = modal.querySelector('.popup');
 let userName = popup.querySelector('[name=username]');
@@ -55,6 +63,7 @@ let storageText = '';
 
 let openPopup = () => {
   modal.classList.remove('hidden');
+  body.style.overflow = 'hidden';
   document.addEventListener('keydown', onPopupEscPress);
   if (userName, userPhone, userText) {
     if (storageName && storagePhone && storageText) {
@@ -82,6 +91,7 @@ let openPopup = () => {
 
 let closePopup = function () {
   modal.classList.add('hidden');
+  body.style.overflow = 'auto';
   document.removeEventListener('keydown', onPopupEscPress);
 };
 
