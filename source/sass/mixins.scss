@@ -36,6 +36,12 @@
   margin: 0 auto;
 }
 
+@mixin min-desktop-wrapper {
+  max-width: $min-wrapper-width;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
 @mixin pseudo($width, $height) {
   content: "";
   position: absolute;

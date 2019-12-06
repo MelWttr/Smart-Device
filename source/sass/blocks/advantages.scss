@@ -1,13 +1,11 @@
 .advantages {
   width: 100%;
-  padding-bottom: 90px;
-  padding-top: 95px;
+  padding-bottom: 105px;
+  padding-top: 81px;
 }
 
 .advantages__wrapper {
-  @include desktop-wrapper;
-  padding: 0 121px 0 118px;
-
+  @include min-desktop-wrapper;
 
   & ul {
     @include list-reducer;
@@ -21,8 +19,8 @@
       @include pseudo(336px, 324px);
       top: 0;
       left: 0;
-      margin-left: -156px;
-      margin-top: -50px;
+      margin-left: -173px;
+      margin-top: -35px;
       z-index: -1;
 
       background-image: url("../img/triangle_small.svg");
@@ -32,9 +30,9 @@
 
     &::after {
       @include pseudo(336px, 324px);
-      top: 301px;
+      top: 316px;
       right: 0;
-      margin-right: -333px;
+      margin-right: -346px;
       z-index: -1;
       background-image: url("../img/triangle_small.svg");
     }
@@ -42,15 +40,20 @@
 
   & li {
     position: relative;
-    margin: 15px;
+    margin: 0;
+    margin-top: 30px;
     padding: 41px 41px 40px 45px;
-    width: calc(50% - 30px);
+    width: calc(50% - 15px);
     min-height: 299px;
 
     border: 1px solid $advantages-item-border;
     background: $white;
     cursor: pointer;
     overflow: hidden;
+  }
+
+  & li:not(:nth-of-type(even)) {
+    margin-right: 30px;
   }
 
   & li::before {
@@ -117,12 +120,11 @@
 
 @media (max-width: $tablet-width) {
   .advantages {
-    padding-top: 36px;
-    padding-bottom: 35px;
+    padding: 22px 0 50px;
   }
 
   .advantages__wrapper {
-    padding: 0 10px 0 10px;
+    padding: 0 $tablet-padding;
 
     & ul::before,
     & ul::after {
@@ -188,21 +190,23 @@
 
 @media (max-width: $mobile-width) {
   .advantages {
-    padding: 17px 0 50px 0;
+    padding: 18px 0 56px 0;
   }
 
   .advantages__wrapper {
     min-width: $min-mobile-width;
-    padding-left: 12px;
-    padding-right: 16px;
+    padding: 0 $mobile-padding;
 
     & ul {
       flex-direction: column;
+
+      & li {
+        margin: 20px 0 0;
+      }
     }
 
     & li {
       width: 100%;
-      margin: 19px 0 0;
       padding: 23px 20px 28px 26px;
     }
 

@@ -5,16 +5,15 @@
 }
 
 .feedback__wrapper {
-  @include desktop-wrapper;
+  @include min-desktop-wrapper;
   position: relative;
-  padding-left: 742px;
 
   &::before {
     @include pseudo(686px, 641px);
     top: 0;
     left: 0;
-    margin-top: -147px;
-    margin-left: -57px;
+    margin-top: -151px;
+    margin-left: -185px;
 
     background-image: url("../img/airplane@1x.png");
     background-size: cover;
@@ -30,13 +29,14 @@
 
 .feedback__form {
   position: relative;
-  max-width: 570px;
+  width: calc(50% - 15px);
+  margin-left: auto;
 
   &::before {
     @include pseudo(405px, 405px);
     top: 120px;
     right: 0;
-    margin-right: -448px;
+    margin-right: -443px;
     opacity: 0.2;
 
     background-image: url("../img/triangle_small.svg");
@@ -50,7 +50,7 @@
     top: 0;
     right: 0;
     margin-top: -63px;
-    margin-right: -370px;
+    margin-right: -368px;
     opacity: 0.2;
 
     background-image: url("../img/triangle_small.svg");
@@ -62,21 +62,17 @@
   }
 }
 
-@media (max-width: $form-nobg-width) {
+@media (max-width: $tablet-width) {
+  .feedback {
+    padding: 75px 0 104px;
+  }
+
   .feedback__wrapper {
-    max-width: 100%;
-    width: 100%;
     padding: 0 90px;
 
     &::before {
       display: none;
     }
-  }
-}
-
-@media (max-width: $tablet-width) {
-  .feedback {
-    padding: 75px 0 104px;
   }
 
   .feedback__form {

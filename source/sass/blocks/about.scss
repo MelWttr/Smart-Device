@@ -1,17 +1,18 @@
 .about {
-  padding-bottom: 107px;
+  padding-bottom: 110px;
 }
 
 .about__wrapper {
-  @include desktop-wrapper;
+  @include min-desktop-wrapper;
+  padding-left: 197px;
   position: relative;
-  padding: 0px 134px 0 318px;
   color: $main-text-color;
 
   &::before {
     @include pseudo(220px, 317px);
     top: 5px;
-    left: 113px;
+    left: 0;
+    margin-left: -10px;
 
     background-image: url("../img/2005@1x.png");
     background-size: 220px 317px;
@@ -46,7 +47,7 @@
   & .button {
     width: 180px;
     margin: 0;
-    margin-top: 43px;
+    margin-top: 40px;
     padding: 0;
 
     color: $colored-button;
@@ -65,10 +66,10 @@
   }
 
   .about__wrapper {
-    padding: 0 22px 0 210px;
+    padding: 0 $tablet-padding 0 212px;
 
     &::before {
-      left: 0;
+      left: 9px;
       top: 0;
       width: 244px;
       height: 362px;
@@ -111,11 +112,11 @@
     }
 
     & p:nth-of-type(2n) {
-      margin-top: 46px;
+      margin-top: 42px;
     }
 
     & .button {
-      margin-top: 34px;
+      margin-top: 31px;
     }
   }
 }
