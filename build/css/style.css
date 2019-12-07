@@ -953,6 +953,8 @@ input[type="radio"].visually-hidden {
     border: none;
     background: none;
     background-image: linear-gradient(to left, transparent 7.5px, #c4c4c4 7.5px, transparent 8.5px), linear-gradient(to bottom, transparent 7.5px, #c4c4c4 7.5px, transparent 8.5px); }
+    .footer__button:focus {
+      outline: none; }
   .footer__menu {
     width: 100%;
     position: relative;

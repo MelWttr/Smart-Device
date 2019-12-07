@@ -5,9 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description"
+    content="Производство и монтаж, поставка комплектующих, блоков и модулей. Производство печатных плат. Монтаж печатных плат. Комплектующие для светотехники. Заказать печатные платы.">
   <title>Smart Device</title>
   <link rel="stylesheet" href="css/style_min.css">
-  <link rel="icon" href="data:,">
 </head>
 
 <body>
@@ -146,12 +147,12 @@
 
             <div class="form__user-info">
               <label><input type="text" placeholder="Имя" minlength="2" maxlength="20" pattern="[A-Za-zА-Яа-яЁё ]*"
-                  required></label>
-              <label><input type="tel" placeholder="Телефон" minlength="5" maxlength="40" pattern="[0-9]*"
-                  required></label>
+                  required aria-label="поле ввода имени"></label>
+              <label><input type="tel" placeholder="Телефон" minlength="5" maxlength="40" pattern="[0-9]*" required
+                  aria-label="поле ввода адреса"></label>
             </div>
             <div class="form__textarea">
-              <label><textarea placeholder="Ваш вопрос" required></label>
+              <label><textarea placeholder="Ваш вопрос" required aria-label="поле ввода сообщения"></label>
             </div>
             <div class="form__submition">
                 <button class="button button--transparent" type="submit">Задать вопрос</button>
@@ -174,18 +175,18 @@
           </a>
           <p>1999-2018 SD Service Devices</p>
           <ul>
-            <li><a href="www.facebook.com">
+            <li><a href="www.facebook.com" aria-label="Service Decice на фэйсбук">
                 <svg class="footer__icon" width="26" height="26">
                   <use xlink:href="#icon_facebook"></use>
                 </svg>
               </a></li>
-            <li><a href="www.ok.ru">
+            <li><a href="www.ok.ru" aria-label="Service Decice в одноклассниках">
                 <svg width="26" height="26">
                   <use xlink:href="#icon_odnoclassniki"></use>
                 </svg>
               </a></li>
             <li>
-              <a href="www.vk.com">
+              <a href="www.vk.com" aria-label="Service Decice вконтакте">
                 <svg width="26" height="26">
                   <use xlink:href="#icon_vk"></use>
                 </svg>
@@ -250,12 +251,12 @@
             <form action="#">
                 <div class="form__user-info">
                   <label><input name="username" type="text" placeholder="Имя" minlength="2" maxlength="20"
-                      pattern="[A-Za-zА-Яа-яЁё ]*" required></label>
+                      pattern="[A-Za-zА-Яа-яЁё ]*" required aria-label="поле ввода имени"></label>
                   <label><input type="tel" name="userphone" placeholder="Телефон" minlength="5" maxlength="40" pattern="[0-9]*"
-                      required></label>
+                      required aria-label="поле ввода телефона"></label>
                 </div>
                 <div class="form__textarea">
-                  <label><textarea name=usertext placeholder="Ваш вопрос" required></label>
+                  <label><textarea name=usertext placeholder="Ваш вопрос" required aria-label="поле ввода сообщения"></label>
                 </div>
                 <div class="form__submition">
                     <button class="button button--transparent" type="submit">Отправить</button>
