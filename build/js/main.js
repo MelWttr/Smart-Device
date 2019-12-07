@@ -27,20 +27,17 @@ let toggleMenu = (menu) => {
 }
 
 
-let toggleButtonHandler = () => {
+let toggleMenuHandler = () => {
 
-  let footerNavBtn = document.querySelector('.footer__button--nav');
-  let footerContactsBtn = document.querySelector('.footer__button--contacts');
-
-  if (footerNav && footerNavBtn) {
-    footerNavBtn.addEventListener('click', () => {
+  if (footerNav) {
+    footerNav.addEventListener('click', () => {
       toggleMenu(footerNav);
       accordeon(footerNav, footerContacts);
     });
   }
 
-  if (footerContacts && footerContactsBtn) {
-    footerContactsBtn.addEventListener('click', () => {
+  if (footerContacts) {
+    footerContacts.addEventListener('click', () => {
       toggleMenu(footerContacts);
       accordeon(footerContacts, footerNav);
     });
@@ -49,14 +46,14 @@ let toggleButtonHandler = () => {
 
 function queryMatchHandler(mediaQuery) {
   if (mediaQuery.matches) {
-    toggleButtonHandler();
+    toggleMenuHandler();
   }
 }
 
 if (matchMedia) {
   const mediaQuery = window.matchMedia(mobileScreen);
   queryMatchHandler(mediaQuery);
-  mediaQuery.addListener(toggleButtonHandler);
+  mediaQuery.addListener(toggleMenuHandler);
 }
 
 

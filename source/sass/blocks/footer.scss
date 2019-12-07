@@ -334,10 +334,26 @@
     width: 100%;
     position: relative;
     margin: 0;
-    padding: 29px 36px 28px 16px;
+    padding: 29px 36px 0 16px;
 
     & h2 {
-      margin: 0;
+      margin-bottom: 0;
+    }
+
+    &--closed ul {
+      max-height: 0;
+      margin-top: 0;
+      overflow: hidden;
+      transition: all 200ms ease-in-out;
+    }
+
+    &--opened ul {
+      max-height: 900px;
+      transition: all 200ms ease-in-out;
+    }
+
+    &--opened ul:last-of-type {
+      margin-bottom: 28px;
     }
 
     &--navigation {
@@ -345,23 +361,16 @@
     }
 
     & ul:first-of-type {
-      margin-top: 33px;
-    }
-
-    &--closed ul {
-      display: none;
+      margin-top: 28px;
+      margin-right: 0;
     }
 
     &--opened button {
       background-image: linear-gradient(to bottom, transparent 7.5px, #c4c4c4 7.5px, transparent 8.5px);
     }
 
-    &--opened ul {
-      display: flex;
-    }
-
     &--nojs ul {
-      display: flex;
+      max-height: 900px;
     }
   }
 
@@ -376,7 +385,6 @@
     padding: 30px;
 
     & p:last-of-type {
-
       margin-top: 30px;
       text-align: center;
     }
