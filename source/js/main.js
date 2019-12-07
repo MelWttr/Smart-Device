@@ -8,6 +8,8 @@ const escCode = 27;
 
 let footerNav = document.querySelector('.footer__menu--navigation');
 let footerContacts = document.querySelector('.footer__menu--contacts');
+let NavBtn = footerNav.querySelector('.footer__button');
+let ContactsBtn = footerContacts.querySelector('.footer__button');
 
 footerContacts.classList.remove('footer__menu--nojs');
 footerNav.classList.remove('footer__menu--nojs');
@@ -29,15 +31,15 @@ let toggleMenu = (menu) => {
 
 let toggleMenuHandler = () => {
 
-  if (footerNav) {
-    footerNav.addEventListener('click', () => {
+  if (footerNav && NavBtn) {
+    NavBtn.addEventListener('click', () => {
       toggleMenu(footerNav);
       accordeon(footerNav, footerContacts);
     });
   }
 
-  if (footerContacts) {
-    footerContacts.addEventListener('click', () => {
+  if (footerContacts && ContactsBtn) {
+    ContactsBtn.addEventListener('click', () => {
       toggleMenu(footerContacts);
       accordeon(footerContacts, footerNav);
     });
@@ -157,18 +159,20 @@ let scrollAnchors = (e, respond = null) => {
   const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
   e.preventDefault();
   var targetID = (respond) ? respond.getAttribute('href') : e.target.getAttribute('href');
-  const targetAnchor = document.querySelector(targetID);
-  if (!targetAnchor) return;
-  const originalTop = distanceToTop(targetAnchor);
-  window.scrollBy({ top: originalTop, left: 0, behavior: 'smooth' });
-  const checkIfDone = setInterval(function () {
-    const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
-    if (distanceToTop(targetAnchor) === 0 || atBottom) {
-      targetAnchor.tabIndex = '-1';
-      window.history.pushState('', '', targetID);
-      clearInterval(checkIfDone);
-    }
-  }, 100);
-}
+  if (targetID != '#') {
+    const targetAnchor = document.querySelector(targetID);
+    if (!targetAnchor) return;
+    const originalTop = distanceToTop(targetAnchor);
+    window.scrollBy({ top: originalTop, left: 0, behavior: 'smooth' });
+    const checkIfDone = setInterval(function () {
+      const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
+      if (distanceToTop(targetAnchor) === 0 || atBottom) {
+        targetAnchor.tabIndex = '-1';
+        window.history.pushState('', '', targetID);
+        clearInterval(checkIfDone);
+      }
+    }, 100);
+  }
 
+}
 scrollTo();
