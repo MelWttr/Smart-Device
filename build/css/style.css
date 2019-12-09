@@ -397,6 +397,7 @@ input[type="radio"].visually-hidden {
   max-width: 1440px;
   padding: 0 20px;
   margin: 0 auto;
+  padding: 0 30px 0 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -452,7 +453,7 @@ input[type="radio"].visually-hidden {
             align-items: center;
     margin-left: 88px; }
   .header__wrapper svg {
-    margin-right: 15px; }
+    margin-right: 18px; }
   .header__wrapper .button {
     width: 180px;
     margin-right: -13px; }
@@ -507,7 +508,7 @@ input[type="radio"].visually-hidden {
 .promo {
   padding: 227px 0 186px;
   background: url("../img/promo_desktop@1x.png") no-repeat;
-  background-position: 87% 34px;
+  background-position: 85% 34px;
   background-size: 713px 655px; }
   @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     .promo {
@@ -516,7 +517,8 @@ input[type="radio"].visually-hidden {
 .promo__wrapper {
   max-width: 1440px;
   padding: 0 20px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding: 0 8px; }
 
 .promo__info {
   position: relative;

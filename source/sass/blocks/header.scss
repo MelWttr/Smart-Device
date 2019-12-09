@@ -18,6 +18,7 @@
 
 .header__wrapper {
   @include desktop-wrapper;
+  padding: 0 30px 0 10px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -53,7 +54,7 @@
   }
 
   & svg {
-    margin-right: 15px;
+    margin-right: 18px;
   }
 
   & .button {
