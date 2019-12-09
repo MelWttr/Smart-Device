@@ -1396,7 +1396,7 @@ input[type="radio"].visually-hidden {
     position: relative;
     display: block;
     width: 100%;
-    height: 620px;
+    height: 100%;
     color: #ffffff;
     font-family: "Roboto Condensed", "Arial", sans-serif;
     font-size: 1.25rem;
@@ -1410,7 +1410,8 @@ input[type="radio"].visually-hidden {
       right: 0;
       background-color: #00b2ff;
       -webkit-transition: 200ms ease-in;
-      transition: 200ms ease-in; }
+      transition: 200ms ease-in;
+      z-index: 1; }
     .services__wrapper a::after {
       content: "";
       position: absolute;
@@ -1423,13 +1424,21 @@ input[type="radio"].visually-hidden {
       -webkit-transition: 200ms ease-in;
       transition: 200ms ease-in;
       -webkit-transform: rotate(-45deg);
-              transform: rotate(-45deg); }
+              transform: rotate(-45deg);
+      z-index: 1; }
   .services__wrapper a:hover::before {
     background-color: #ffffff; }
   .services__wrapper a:hover::after {
     border-color: #00b2ff;
     -webkit-transform: scale(1.5) rotate(-45deg);
             transform: scale(1.5) rotate(-45deg); }
+  .services__wrapper img {
+    height: 100%;
+    width: 100%;
+    opacity: 0.2;
+    -o-object-fit: fill;
+       object-fit: fill;
+    font-family: "object-fit: fill;"; }
   .services__wrapper img:nth-of-type(2) {
     display: none; }
   .services__wrapper img:nth-of-type(3) {
