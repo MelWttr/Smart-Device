@@ -37,17 +37,6 @@
     margin-right: 0;
   }
 
-  @for $i from 1 through 3 {
-    li:nth-of-type(#{$i}) {
-      background-image: url("../img/service_#{$i}@1x.png");
-
-      @media (min-resolution: $retina-dpi),
-        (min-resolution: $retina-dppx) {
-        background-image: url("../img/service_#{$i}@2x.png");
-      }
-    }
-  }
-
   & li:hover {
     transform: translateY(-2px);
   }
@@ -56,7 +45,6 @@
     position: relative;
 
     display: block;
-    padding: 43px;
     width: 100%;
     height: 620px;
     color: $white;
@@ -95,11 +83,22 @@
     transform: scale(1.5) rotate(-45deg);
   }
 
+
+  & img:nth-of-type(2) {
+    display: none;
+  }
+
+  & img:nth-of-type(3) {
+    display: none;
+  }
+
   & h3 {
+    position: absolute;
+    top: 46px;
+    left: 43px;
     margin: 0;
-    margin-top: 5px;
     padding: 0;
-    width: 60%;
+    width: 45%;
 
     font-size: 1.25rem;
     line-height: 1.5;
@@ -132,15 +131,16 @@
       height: 256px;
     }
 
-    @for $i from 1 through 3 {
-      li:nth-of-type(#{$i}) {
-        background-image: url("../img/service_#{$i}_tablet@1x.png");
+    & img:first-of-type {
+      display: none;
+    }
 
-        @media (min-resolution: $retina-dpi),
-          (min-resolution: $retina-dppx) {
-          background-image: url("../img/service_#{$i}_tablet@2x.png");
-        }
-      }
+    & img:nth-of-type(2) {
+      display: inline-block;
+    }
+
+    & img:nth-of-type(3) {
+      display: none;
     }
 
     & h2 {
@@ -177,24 +177,22 @@
       margin-top: 30px;
     }
 
-    @for $i from 1 through 3 {
-      li:nth-of-type(#{$i}) {
-        background-image: url("../img/service_#{$i}_mobile@1x.png");
-
-        @media (min-resolution: $retina-dpi),
-          (min-resolution: $retina-dppx) {
-          background-image: url("../img/service_#{$i}_mobile@2x.png");
-        }
-      }
-    }
-
     & h3 {
-      width: 75%;
+      top: 24px;
+      left: 33px;
+      width: 65%;
     }
 
-    & a {
-      padding: 32px;
-      padding-top: 25px;
+    & img:first-of-type {
+      display: none;
+    }
+
+    & img:nth-of-type(2) {
+      display: none;
+    }
+
+    & img:nth-of-type(3) {
+      display: inline-block;
     }
   }
 }
