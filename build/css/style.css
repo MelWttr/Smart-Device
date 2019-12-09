@@ -992,7 +992,6 @@ input[type="radio"].visually-hidden {
     .footer__menu--closed ul {
       max-height: 0;
       margin-top: 0;
-      overflow: hidden;
       -webkit-transition: all 200ms ease-in-out;
       transition: all 200ms ease-in-out; }
     .footer__menu--opened ul {
