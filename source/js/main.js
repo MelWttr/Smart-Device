@@ -5,6 +5,7 @@
 
 const mobileScreen = '(max-width: 767px)';
 const escCode = 27;
+const phoneNumberLength = 11;
 
 let footerNav = document.querySelector('.footer__menu--navigation');
 let footerContacts = document.querySelector('.footer__menu--contacts');
@@ -132,16 +133,16 @@ try {
   isStorageSupport = false;
 }
 
-if (form) {
-  form.addEventListener('submit', (evt) => {
-    if (isStorageSupport) {
-      localStorage.setItem('username', userName.value);
-      localStorage.setItem('userphone', userPhone.value);
-      localStorage.setItem('usertext', userText.value);
-    }
-    form.submit();
-  });
-}
+// if (form) {
+//   form.addEventListener('submit', (evt) => {
+//     if (isStorageSupport) {
+//       localStorage.setItem('username', userName.value);
+//       localStorage.setItem('userphone', userPhone.value);
+//       localStorage.setItem('usertext', userText.value);
+//     }
+//     form.submit();
+//   });
+// }
 
 // плавный скролл
 
@@ -176,3 +177,39 @@ let scrollAnchors = (e, respond = null) => {
 
 }
 scrollTo();
+
+// форма
+
+let checkPhone = (phoneField, validNumberLength) => {
+  let nameValue = phoneField.value;
+  let numbersQuantity = nameValue.replace(/\D+/g, '').length;
+  return numbersQuantity < validNumberLength ? 'номер должен содержать не менее ' + validNumberLength + ' цифр' : ''
+}
+
+let checkName = (nameField) => {
+  return nameField.validity.patternMismatch ? 'Должны быть только буквы (не менее двух)' : ''
+}
+
+let popupFormSubmitBtn = popup.querySelector('button[type="submit"]');
+
+popupFormSubmitBtn.addEventListener('click', (evt) => {
+  let popupPhone = popup.querySelector('input[type="tel"]');
+  let popupName = popup.querySelector('input[type="text"]');
+  popupPhone.setCustomValidity(checkPhone(popupPhone, phoneNumberLength));
+  popupName.setCustomValidity(checkName(popupName));
+  if (isStorageSupport) {
+    localStorage.setItem('username', userName.value);
+    localStorage.setItem('userphone', userPhone.value);
+    localStorage.setItem('usertext', userText.value);
+  }
+});
+
+let mainForm = document.querySelector('#form');
+let mainFormSubmitBtn = mainForm.querySelector('button[type="submit"]');
+
+mainFormSubmitBtn.addEventListener('click', (evt) => {
+  let phone = mainForm.querySelector('input[type="tel"]');
+  let name = mainForm.querySelector('input[type="text"]');
+  phone.setCustomValidity(checkPhone(phone, phoneNumberLength));
+  name.setCustomValidity(checkName(name));
+});
