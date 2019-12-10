@@ -993,10 +993,12 @@ input[type="radio"].visually-hidden {
       max-height: 0;
       margin-top: 0;
       overflow: hidden;
-      -webkit-transition: max-height 200ms ease-in-out;
-      transition: max-height 200ms ease-in-out; }
+      -webkit-transition: max-height 300ms ease-in-out;
+      transition: max-height 300ms ease-in-out; }
     .footer__menu--opened ul {
-      max-height: 900px; }
+      max-height: 900px;
+      -webkit-transition: max-height 300ms ease-in-out;
+      transition: max-height 300ms ease-in-out; }
     .footer__menu--opened ul:last-of-type {
       margin-bottom: 28px; }
     .footer__menu--navigation {

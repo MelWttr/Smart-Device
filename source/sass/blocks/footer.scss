@@ -350,11 +350,12 @@
       max-height: 0;
       margin-top: 0;
       overflow: hidden;
-      transition: max-height 200ms ease-in-out;
+      transition: max-height 300ms ease-in-out;
     }
 
     &--opened ul {
       max-height: 900px;
+      transition: max-height 300ms ease-in-out;
     }
 
     &--opened ul:last-of-type {
